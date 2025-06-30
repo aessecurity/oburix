@@ -11,6 +11,17 @@
 - 🔥 Lightweight, low-overhead architecture  
 - 📦 Integrates easily into SIEM/XDR pipelines  
 
+## 🏗️  Development setup.
+```
+git clone https://github.com/ByCh4n-Group/oburix.git && cd oburix
+```
+
+```
+cd runtime
+mkdir -p "build" && cd "build"
+cmake .. && make
+```
+
 ## 📦 Installation
 
 Coming soon.  
@@ -30,20 +41,7 @@ Oburix uses eBPF to observe system-level events without intrusive kernel modules
 Detection behavior is defined through simple YAML-based rules:
 
 ```yaml
-rules:
-  - id: suspicious-port
-    type: network
-    condition:
-      dst_port: 4444
-      protocol: tcp
-    action: alert
-
-  - id: sensitive-file-read
-    type: file
-    condition:
-      path: "/etc/passwd"
-      access: read
-    action: alert
+...
 ```
 
 ## 🚧 Status
